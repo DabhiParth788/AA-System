@@ -693,36 +693,76 @@ session_start();
 
 
                     <div class="card p-4 m-5">
+                        <form action="">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="teacher_name" placeholder="Enter Name">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="text" class="form-control" id="email" placeholder="Enter Email">
+                            </div>
+                    
+                            <div class="mb-3">
+                                <label for="phone_number" class="form-label">Phone Number</label>
+                                <input type="String" class="form-control" id="phone_number" placeholder="Enter Phone Number">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" placeholder="Enter Password">
+                            </div>
+
+                            <div class="text-center">
+                            <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+                                <input class="btn btn-primary btn-lg" type="submit" name="submit" value="Submit" />
+                            </div>
+                        </form>
+                    </div>
+                    
+
+                    <div class="card p-4 m-5">
                                 <form action="">
                                     <div class="mb-3">
-                                        <label for="name" class="form-label">Name</label>
-                                        <input type="text" class="form-control" id="teacher_name"
-                                            placeholder="Enter Name">
+                                        <label for="teacher_name" class="form-label">Teacher Name</label>
+                                        <br>
+                                        <select name="standard" id="standard">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                        </select>
                                     </div>
-                                    <div class="mb-3">
-                                        <label for="email" class="form-label">Email</label>
-                                        <input type="text" class="form-control" id="email" placeholder="Enter Email">
+                                    
+                                    <div class="d-flex gap-5">    
+                                        <div class="mb-3">
+                                            <label for="standard" class="form-label">Standard</label>
+                                            <br>
+                                            <select name="standard" id="standard">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="standard" class="form-label">Division</label>
+                                            <br>
+                                            <select name="standard" id="standard">
+                                                <option value="1">A</option>
+                                                <option value="2">B</option>
+                                                <option value="3">C</option>
+                                            </select>
+                                        </div>
                                     </div>
 
-                                    <div class="mb-3">
-                                        <label for="phone_number" class="form-label">Phone Number</label>
-                                        <input type="String" class="form-control" id="phone_number" placeholder="Enter Phone Number">
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <label for="password" class="form-label">Password</label>
-                                        <input type="password" class="form-control" id="password" placeholder="Enter Password">
-                                    </div>
                                     <div class="text-center">
                                         <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
                                         <input class="btn btn-primary btn-lg" type="submit" name="submit" value="Submit" />
                                     </div>
                                 </form>
-                            </div>            
-
-
-
-
+                            </div>
+                    
                 </div>
                 <!-- container-fluid -->
             </div>
