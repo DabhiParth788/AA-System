@@ -1,13 +1,15 @@
-<!-- <?php
-// session_start();
+<?php
+session_start();
 
-// if (!isset($_SESSION['user_id'])) {
-//     header("Location: login.html");
-//     exit();
-// }
+if ($_SESSION['user_profession']==="student") {
+    header("Location: studentPage.php");
+}
+else{
+    // You are already in teacher's page
 
-// echo "Welcome " . $_SESSION['username'];
-?> -->
+}
+
+?>
 
 <!doctype html>
 <html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable" data-theme="default" data-theme-colors="default">
