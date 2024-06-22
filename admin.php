@@ -1,7 +1,14 @@
 <?php
 session_start();
+if($_SESSION["login"] and $_SESSION["admin"]){
+    include "include/dbconn.php";
 
+    $email = $_SESSION["email"];
+    $sql = "SELECT * EXCEPT(password) FROM admin";
 
+    $result = mysqli_fetch_assoc(mysqli_query($conn, $sql));
+    $detail = array($result["name"], $result["email"], $result["school"]);
+}
 ?>
 
 <!doctype html>
@@ -456,7 +463,7 @@ session_start();
                                 <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text"> Admin Name </span>
                                 <span class="d-none d-xl-block ms-1 fs-12 user-name-sub-text"> Admin </span>
                             </span>
-                        </span>
+                        </span> 
                     </button>
                     <div class="dropdown-menu dropdown-menu-end">
                         <!-- item-->
@@ -697,25 +704,25 @@ session_start();
                                     <div class="mb-3">
                                         <label for="name" class="form-label">Name</label>
                                         <input type="text" class="form-control" id="teacher_name"
-                                            placeholder="Enter Name">
+                                            placeholder="Enter Name" name="name" required>
                                     </div>
                                     <div class="mb-3">
                                         <label for="email" class="form-label">Email</label>
-                                        <input type="text" class="form-control" id="email" placeholder="Enter Email">
+                                        <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email" required>
                                     </div>
 
                                     <div class="mb-3">
                                         <label for="phone_number" class="form-label">Phone Number</label>
-                                        <input type="String" class="form-control" id="phone_number" placeholder="Enter Phone Number">
+                                        <input type="String" class="form-control" id="phone_number" placeholder="Enter Phone Number" name="phone_no" required>
                                     </div>
 
                                     <div class="mb-3">
                                         <label for="password" class="form-label">Password</label>
-                                        <input type="password" class="form-control" id="password" placeholder="Enter Password">
+                                        <input type="password" class="form-control" id="password" placeholder="Enter Password" name="password">
                                     </div>
                                     <div class="text-center">
                                         <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
-                                        <input class="btn btn-primary btn-lg" type="submit" name="submit" value="Submit" />
+                                        <input class="btn btn-primary btn-lg" type="submit" name="teacher_add" value="Submit" />
                                     </div>
                                 </form>
                             </div>            
@@ -791,3 +798,9 @@ session_start();
 
 <!-- Mirrored from themesbrand.com/velzon/html/master/dashboard-analytics.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 15 Jun 2024 06:10:36 GMT -->
 </html>
+
+<?php
+    if($_SESSION["login"] and isset($_POST["teacher_add"])){
+        
+    }
+?>
