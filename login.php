@@ -1,6 +1,5 @@
 <?php
 include 'include/dbconn.php';
-session_start();
 
 function sanitize_input($data) {
     return htmlspecialchars(stripslashes(trim($data)));
@@ -21,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "<script type='text/javascript'>
                 window.location = '$db.php';
               </script>";
-
+    }
 }
 ?>
 <!DOCTYPE html>
