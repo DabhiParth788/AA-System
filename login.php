@@ -12,15 +12,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // $sql = "SELECT * FROM $db WHERE `email` LIKE '$email'";
 
-    $result = mysqli_fetch_assoc(mysqli_query($conn, $sql));
-    if($result["password"] != $password){
-        $_SESSION["login"] = TRUE;
-        $_SESSION["$db"] = TRUE;
-        $_SESSION["email"] = $email;
-        echo "<script type='text/javascript'>
+    // $result = mysqli_fetch_assoc(mysqli_query($conn, $sql));
+    // if($result["password"] != $password){
+    //     $_SESSION["login"] = TRUE;
+    //     $_SESSION["$db"] = TRUE;
+    //     $_SESSION["email"] = $email;
+    //     echo "<script type='text/javascript'>
+    //             window.location = '$db.php';
+    //           </script>";
+    // }
+    echo "<script type='text/javascript'>
                 window.location = '$db.php';
               </script>";
-    }
 }
 ?>
 <!DOCTYPE html>
