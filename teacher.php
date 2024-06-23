@@ -403,7 +403,7 @@
                     <ul class="navbar-nav" id="navbar-nav">
                         <li class="menu-title"><span data-key="t-menu">Menu</span></li>
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="#sidebarDashboards" role="button" aria-expanded="false"
+                            <a class="nav-link menu-link" href="?page=profile" role="button" aria-expanded="false"
                                 aria-controls="sidebarDashboards">
                                 <i class="ri-dashboard-2-line"></i> <span data-key="t-dashboards">Dashboards</span>
                             </a>
@@ -421,7 +421,7 @@
                             <div class="collapse menu-dropdown" id="sidebarAuth">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link" role="button" aria-expanded="false"> Profile</a>
+                                        <a href="?page=profile" class="nav-link" role="button" aria-expanded="false"> Profile</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="#" class="nav-link" role="button" aria-expanded="false"> Edu.
@@ -440,10 +440,10 @@
                             <div class="collapse menu-dropdown" id="sidebarTimeTable">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link" data-key=""> Take Attendance </a>
+                                        <a href="?page=takeAttendance" class="nav-link" data-key=""> Take Attendance </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link" data-key=""> View Attendance </a>
+                                        <a href="?page=viewAttendance" class="nav-link" data-key=""> View Attendance </a>
                                     </li>
 
                                 </ul>
@@ -460,7 +460,7 @@
                                         <a href="?page=addStudent" class="nav-link" data-key="" > Register New Student </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link" data-key=""> View Student </a>
+                                        <a href="?page=viewStudent" class="nav-link" data-key=""> View Student </a>
                                     </li>
                                 </ul>
                             </div>
@@ -506,12 +506,65 @@
                         <div class="col-12">
                             <div
                                 class="page-title-box d-sm-flex align-items-center justify-content-between bg-galaxy-transparent">
-                                <h4 class="mb-sm-0">Dashboard</h4>
+                                <h4 class="mb-sm-0">
+                                <?php
+            $page = $_GET['page'];
+            if ($page == 'takeAttendance') {
+                echo "Attendance";
+            }
+            elseif($page == 'viewAttendance'){
+                echo "Attendance";
+            }
+            elseif($page == 'addStudent'){
+                echo "Student";
+            }
+            elseif($page == 'viewStudent'){
+                echo "Student";
+            }
+            else {
+                 echo "Dashboard";
+            }
+        ?>
+                                </h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboards</a></li>
-                                        <li class="breadcrumb-item active">Home</li>
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">                                <?php
+            $page = $_GET['page'];
+            if ($page == 'takeAttendance') {
+                echo "Attendance";
+            }
+            elseif($page == 'viewAttendance'){
+                echo "Attendance";
+            }
+            elseif($page == 'addStudent'){
+                echo "Student";
+            }
+            elseif($page == 'viewStudent'){
+                echo "Student";
+            }
+            else {
+                 echo "Dashboard";
+            }
+        ?></a></li>
+                                        <li class="breadcrumb-item active">                                <?php
+            $page = $_GET['page'];
+            if ($page == 'takeAttendance') {
+                echo "Take Attendance";
+            }
+            elseif($page == 'viewAttendance'){
+                echo "View Attendance";
+            }
+            elseif($page == 'addStudent'){
+                echo "Register Student";
+            }
+            elseif($page == 'viewStudent'){
+                echo "View Student";
+            }
+            else {
+                 echo "Home";
+            }
+        ?></li>
                                     </ol>
                                 </div>
 
@@ -522,10 +575,20 @@
                      
                     <?php
             $page = $_GET['page'];
-            if ($page == 'addStudent') {
-                include 'addStudent.php';
-            } else {
-                echo '<h2>Page not found</h2>';
+            if ($page == 'takeAttendance') {
+                include './teacher/takeAttendance.php';
+            }
+            elseif($page == 'viewAttendance'){
+                include './teacher/viewAttendance.php';
+            }
+            elseif($page == 'addStudent'){
+                include './teacher/addStudent.php';
+            }
+            elseif($page == 'viewStudent'){
+                include './teacher/viewStudent.php';
+            }
+             else {
+                include './teacher/profile.php';
             }
         ?>
 
