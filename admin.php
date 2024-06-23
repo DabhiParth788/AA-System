@@ -650,7 +650,7 @@
                     <ul class="navbar-nav" id="navbar-nav">
                         <li class="menu-title"><span data-key="t-menu">Menu</span></li>
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="#sidebarDashboards" role="button" aria-expanded="false"
+                            <a class="nav-link menu-link" href="?page=profile" role="button" aria-expanded="false"
                                 aria-controls="sidebarDashboards">
                                 <i class="ri-dashboard-2-line"></i> <span data-key="t-dashboards">Dashboards</span>
                             </a>
@@ -668,7 +668,7 @@
                             <div class="collapse menu-dropdown" id="sidebarAuth">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link" role="button" aria-expanded="false"> Profile</a>
+                                        <a href="?page=profile"class="nav-link" role="button" aria-expanded="false"> Profile</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="#" class="nav-link" role="button" aria-expanded="false"> Edu.
@@ -687,10 +687,10 @@
                             <div class="collapse menu-dropdown" id="sidebarTimeTable">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link" data-key=""> Add New Teacher </a>
+                                        <a href="?page=addTeacher" class="nav-link" data-key=""> Add New Teacher </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link" data-key=""> View Teachers </a>
+                                        <a href="?page=viewTeacher" class="nav-link" data-key=""> View Teachers </a>
                                     </li>
 
                                 </ul>
@@ -704,10 +704,10 @@
                             <div class="collapse menu-dropdown" id="sidebarExam">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link" data-key=""> Class Allocation </a>
+                                        <a href="?page=classAllocation" class="nav-link" data-key=""> Class Allocation </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link" data-key=""> Class Details </a>
+                                        <a href="?page=classDetails" class="nav-link" data-key=""> Class Details </a>
                                     </li>
                                 </ul>
                             </div>
@@ -753,12 +753,70 @@
                         <div class="col-12">
                             <div
                                 class="page-title-box d-sm-flex align-items-center justify-content-between bg-galaxy-transparent">
-                                <h4 class="mb-sm-0">Dashboard</h4>
+                                <h4 class="mb-sm-0">
+                                <?php
+            $page = $_GET['page'];
+            if ($page == 'addTeacher') {
+                echo "Teacher";
+            }
+            elseif($page == 'viewTeacher'){
+                echo "Teacher";
+            }
+            elseif($page == 'classAllocation'){
+                echo "Class";
+            }
+         
+            elseif($page == 'classDetails'){
+                echo "Class";
+            }
+            else {
+                 echo "Dashboard";
+            }
+        ?>
+                                </h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboards</a></li>
-                                        <li class="breadcrumb-item active">Home</li>
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">
+                                        <?php
+            $page = $_GET['page'];
+            if ($page == 'addTeacher') {
+                echo "Teacher";
+            }
+            elseif($page == 'viewTeacher'){
+                echo "Teacher";
+            }
+            elseif($page == 'classAllocation'){
+                echo "Class";
+            }
+            elseif($page == 'classDetails'){
+                echo "Class";
+            }
+            else {
+                 echo "Dashboard";
+            }
+        ?>
+                                        </a></li>
+                                        <li class="breadcrumb-item active">
+                                        <?php
+            $page = $_GET['page'];
+            if ($page == 'addTeacher') {
+                echo "Add Teacher";
+            }
+            elseif($page == 'viewTeacher'){
+                echo "View Teacher";
+            }
+            elseif($page == 'classAllocation'){
+                echo "Class Allocation";
+            }
+            elseif($page == 'classDetails'){
+                echo "Class Details";
+            }
+            else {
+                 echo "Profile";
+            }
+        ?>
+                                        </li>
                                     </ol>
                                 </div>
 
@@ -768,82 +826,28 @@
                     <!-- end page title -->
 
 
-                    <div class="card p-4 m-5">
-                        <form action="" method="POST">
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Name</label>
-                                <input type="text" class="form-control" id="teacher_name" placeholder="Enter Name"
-                                    name="name" required>
-                            </div>
 
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" placeholder="Enter Email"
-                                    name="email" required>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="phone_number" class="form-label">Phone Number</label>
-                                <input type="String" class="form-control" id="phone_number"
-                                    placeholder="Enter Phone Number" name="phone_no" required>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="password" placeholder="Enter Password"
-                                    name="password" required>
-                            </div>
-
-                            <div class="text-center">
-                                <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
-                                <input class="btn btn-primary btn-lg" type="submit" name="teacher_add" value="Submit" />
-                            </div>
-                        </form>
-                    </div>
+                             
+            <?php
+            $page = $_GET['page'];
+            if ($page == 'addTeacher') {
+                include './admin/addTeacher.php';
+            }
+            elseif($page == 'viewTeacher'){
+                include './admin/viewTeacher.php';
+            }
+            elseif($page == 'classAllocation'){
+                include './admin/classAllocation.php';
+            }
+            elseif($page == 'classDetails'){
+                include './admin/classDetails.php';
+            }
+             else {
+                include './admin/profile.php';
+            }
+        ?>
 
 
-                    <div class="card p-4 m-5">
-                        <form action="">
-                            <div class="mb-3">
-                                <label for="teacher_name" class="form-label">Teacher Name</label>
-                                <br>
-                                <select name="standard" id="standard">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                </select>
-                            </div>
-
-                            <div class="d-flex gap-5">
-                                <div class="mb-3">
-                                    <label for="standard" class="form-label">Standard</label>
-                                    <br>
-                                    <select name="standard" id="standard">
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                    </select>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="standard" class="form-label">Division</label>
-                                    <br>
-                                    <select name="standard" id="standard">
-                                        <option value="1">A</option>
-                                        <option value="2">B</option>
-                                        <option value="3">C</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="text-center">
-                                <input class="btn btn-primary btn-lg" type="submit" name="submit" value="Submit" />
-                            </div>
-                        </form>
-                    </div>
-
-                </div>
-            </div>
             <!-- End Page-content -->
 
             <footer class="footer">
