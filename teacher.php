@@ -839,10 +839,10 @@
                                 <label for="gender" class="form-label">Gender</label>
                                 <br>
                                 <div>
-                                    <input type="checkbox" name="male">
+                                    <input type="radio" name="gender">
                                     <label for="male">Male</label>
 
-                                    <input type="checkbox" name="female">
+                                    <input type="radio" name="gender">
                                     <label for="female">Female</label>
 
                                 </div>
