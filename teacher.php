@@ -661,27 +661,6 @@
                                         <a href="#" class="nav-link" role="button" aria-expanded="false"> Edu.
                                             Qualifying Exam</a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link" role="button" aria-expanded="false">
-                                            Publication</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link" role="button" aria-expanded="false"> Projects</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link" role="button" aria-expanded="false"> Membership</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link" role="button" aria-expanded="false">Activity</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link" role="button" aria-expanded="false"> Social
-                                            Media</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link" role="button" aria-expanded="false"> Punishment</a>
-                                    </li>
-
                                 </ul>
                             </div>
                         </li>
@@ -690,15 +669,15 @@
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="#sidebarTimeTable" data-bs-toggle="collapse"
                                 role="button" aria-expanded="false" aria-controls="sidebarTimeTable">
-                                <i class="ri-layout-grid-line"></i> <span data-key="t-pages">Time Table</span>
+                                <i class="ri-layout-grid-line"></i> <span data-key="t-pages">Attendance</span>
                             </a>
                             <div class="collapse menu-dropdown" id="sidebarTimeTable">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link" data-key=""> Time Table </a>
+                                        <a href="#" class="nav-link" data-key=""> Take Attendance </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link" data-key=""> Attendance </a>
+                                        <a href="#" class="nav-link" data-key=""> View Attendance </a>
                                     </li>
 
                                 </ul>
@@ -707,42 +686,15 @@
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="#sidebarExam" data-bs-toggle="collapse" role="button"
                                 aria-expanded="false" aria-controls="sidebarExam">
-                                <i class="ri-pages-line"></i> <span data-key="t-pages">Exam</span>
+                                <i class="ri-pages-line"></i> <span data-key="t-pages">Student</span>
                             </a>
                             <div class="collapse menu-dropdown" id="sidebarExam">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link" data-key=""> Admit Card </a>
+                                        <a href="#" class="nav-link" data-key=""> Register New Student </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link" data-key=""> Result </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link" data-key=""> Supplementary Exam Fee </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link" data-key=""> Old Exam Paper </a>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link menu-link" href="#sidebarFee" data-bs-toggle="collapse" role="button"
-                                aria-expanded="false" aria-controls="sidebarFee">
-                                <i class="ri-rocket-line"></i> <span data-key="">Fee</span>
-                            </a>
-                            <div class="collapse menu-dropdown" id="sidebarFee">
-                                <ul class="nav nav-sm flex-column">
-                                    <li class="nav-item">
-                                        <a href="landing.html" class="nav-link" data-key=""> Pay Fees </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="nft-landing.html" class="nav-link" data-key=""> Fee History </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="job-landing.html" class="nav-link" data-key="">Transport Fee</a>
+                                        <a href="#" class="nav-link" data-key=""> View Student </a>
                                     </li>
                                 </ul>
                             </div>
