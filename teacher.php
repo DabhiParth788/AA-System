@@ -839,10 +839,10 @@
                                 <label for="gender" class="form-label">Gender</label>
                                 <br>
                                 <div>
-                                    <input type="checkbox" name="male">
+                                    <input type="radio" name="gender">
                                     <label for="male">Male</label>
 
-                                    <input type="checkbox" name="female">
+                                    <input type="radio" name="gender">
                                     <label for="female">Female</label>
 
                                 </div>
@@ -866,12 +866,13 @@
                             </div>
                             <div class="text-center">
                                 <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
-                                <input class="btn btn-primary btn-lg" type="submit" name="submit" value="Submit" />
+                                <input class="btn btn-primary btn-lg" type="submit" name="submit_form" value="Submit" />
                             </div>
                         </form>
                     </div>
                     <div class="card p-4 m-5">
                         <h1 class="text-center fs-1">Student Table</h1>
+                        <hr>
                         <table class="table table-nowrap mb-0">
                             <thead>
                                 <tr>
@@ -910,9 +911,13 @@
                                 </tr>
                             </tbody>
                         </table>
+                        <div class="text-center">
+                            <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+                            <input class="btn btn-primary btn-lg mt-3" type="submit" name="submit_attendence" value="Submit" />
+                        </div>
                     </div>
 
-                    
+
 
 
                 </div>
