@@ -1,15 +1,19 @@
 <?php echo "profile";?>
 
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div class="d-flex position-relative">
-                                                <img src="assets/images/users/avatar-3.jpg" class="flex-shrink-0 me-3 avatar-xl rounded" alt="..." />
-                                                <div>
-                                                    <h5 class="mt-0">Custom component with stretched link</h5>
-                                                    <p>This is some placeholder content for the custom component. It is intended to mimic what some real-world content would look like, and we're using it here to give the component a bit of body and size.</p>
-                                                    <a href="javascript:void(0);" class="stretched-link">Go somewhere</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+<div class="d-flex w-50  " style="margin-left: 25%">
+    <div class="card-body card ">
+        <div class="d-flex position-relative flex-column gap-4 align-items-center ">
+            <img src="assets/images/users/avatar-3.jpg" class="flex-shrink-0 me-3 avatar-xl rounded" alt="..." />
+            <div>
+                <h5 class="mt-0">Teacher Name</h5>
+                <p>School Name : </p>
+                <p>Email : Teacher@email.com</p>
+                <p>Contact No. : 9988776655</p>
+                <p>Class : 1-C</p>
+                <p>Education Qualification</p>
+                <a href="javascript:void(0);" class="stretched-link">More Details</a>
+            </div>
+        </div>
+    </div>
+</div>
 
