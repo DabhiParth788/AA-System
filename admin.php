@@ -709,6 +709,9 @@
                                     <li class="nav-item">
                                         <a href="?page=classDetails" class="nav-link" data-key=""> Class Details </a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a href="?page=classCreate" class="nav-link" data-key=""> Create Class  </a>
+                                    </li>
                                 </ul>
                             </div>
                         </li>
@@ -769,6 +772,9 @@
             elseif($page == 'classDetails'){
                 echo "Class";
             }
+            elseif($page == 'classCreate'){
+                echo "Class";
+            }
             else {
                  echo "Dashboard";
             }
@@ -792,6 +798,9 @@
             elseif($page == 'classDetails'){
                 echo "Class";
             }
+            elseif($page == 'classCreate'){
+                echo "Class";
+            }
             else {
                  echo "Dashboard";
             }
@@ -811,6 +820,9 @@
             }
             elseif($page == 'classDetails'){
                 echo "Class Details";
+            }
+            elseif($page == 'classCreate'){
+                echo "Class Create";
             }
             else {
                  echo "Profile";
@@ -841,6 +853,9 @@
             }
             elseif($page == 'classDetails'){
                 include './admin/classDetails.php';
+            }
+            elseif($page == 'classCreate'){
+                include './admin/classCreate.php';
             }
              else {
                 include './admin/profile.php';
