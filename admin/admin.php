@@ -244,7 +244,7 @@
                                             <li class="nav-item waves-effect waves-light">
                                                 <a class="nav-link active" data-bs-toggle="tab" href="#all-noti-tab"
                                                     role="tab" aria-selected="true">
-                                                    All (4)
+                                                    All (3)
                                                 </a>
                                             </li>
                                             <li class="nav-item waves-effect waves-light">
