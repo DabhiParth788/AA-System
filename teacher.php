@@ -10,6 +10,8 @@
     if($row = mysqli_fetch_assoc($result)){
         $detail = array($row["name"], $row["email"], $row["school"], $row["class"], $row["phone_no"]);
     }
+
+
 }
 ?>
 
@@ -508,7 +510,11 @@
                                 class="page-title-box d-sm-flex align-items-center justify-content-between bg-galaxy-transparent">
                                 <h4 class="mb-sm-0">
              <?php
+             if(isset($_GET['page'])){
+
+             
             $page = $_GET['page'];
+
             if ($page == 'takeAttendance') {
                 echo "Attendance";
             }
@@ -524,12 +530,19 @@
             else {
                  echo "Dashboard";
             }
+        }else{
+            $page = '';
+            echo "Dashboard";
+        }
+       
         ?>
                                 </h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">                                <?php
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">                                
+        <?php
+         if(isset($_GET['page'])){
             $page = $_GET['page'];
             if ($page == 'takeAttendance') {
                 echo "Attendance";
@@ -546,8 +559,15 @@
             else {
                  echo "Dashboard";
             }
+        }else{
+            $page = '';
+            echo "Dashboard";
+        }
+
         ?></a></li>
-                                        <li class="breadcrumb-item active">                                <?php
+            <li class="breadcrumb-item active">                               
+        <?php
+                 if(isset($_GET['page'])){
             $page = $_GET['page'];
             if ($page == 'takeAttendance') {
                 echo "Take Attendance";
@@ -564,6 +584,11 @@
             else {
                  echo "Profile";
             }
+        }else{
+            $page = '';
+            echo "Dashboard";
+        }
+
         ?></li>
                                     </ol>
                                 </div>
@@ -574,6 +599,8 @@
                     <!-- end page title -->
                      
             <?php
+         if(isset($_GET['page'])){
+            
             $page = $_GET['page'];
             if ($page == 'takeAttendance') {
                 include './teacher/takeAttendance.php';
@@ -590,6 +617,11 @@
              else {
                 include './teacher/profile.php';
             }
+        }      
+                else {
+                include './teacher/profile.php';
+            }
+
         ?>
 
                 <!-- container-fluid -->
