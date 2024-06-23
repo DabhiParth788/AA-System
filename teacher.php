@@ -538,7 +538,8 @@
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">                                <?php
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">                                
+        <?php
             $page = $_GET['page'];
             if ($page == 'takeAttendance') {
                 echo "Attendance";
@@ -557,7 +558,8 @@
             }
 
         ?></a></li>
-                                        <li class="breadcrumb-item active">                                <?php
+            <li class="breadcrumb-item active">                               
+        <?php
             $page = $_GET['page'];
             if ($page == 'takeAttendance') {
                 echo "Take Attendance";
