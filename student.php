@@ -1,4 +1,15 @@
+<?php
+    include "include/dbconn.php";
+    if($_SESSION["login"] and $_SESSION["student"]){
+        $email = $_SESSION["email"];
+        $sql = "SELECT * FROM student WHERE `email` LIKE '$email'";
 
+        $result = mysqli_query($conn, $sql);
+        if ($row = mysqli_fetch_assoc($result)) {
+            $detail = array($row["name"], $row["enrollment_no"], $row["school"], $row["class"], $row["gender"], $row["email"], $row["phone_no"]);
+        }
+    }
+?>
 
 <!doctype html>
 <html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable" data-theme="default" data-theme-colors="default">
@@ -485,7 +496,7 @@
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div>
                                                 <p class="fw-medium text-muted mb-0">ENROLLMENT</p>
-                                                <h3 class="mt-4 mx-2 ff-secondary cfs-22 fw-semibold">210210116000</h3>
+                                                <h3 class="mt-4 mx-2 ff-secondary cfs-22 fw-semibold"><?php echo $detail[1] ?></h3>
                                             </div>
                                             <div>
                                                 <div class="avatar-sm flex-shrink-0">
