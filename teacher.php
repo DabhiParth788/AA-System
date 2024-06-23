@@ -8,7 +8,7 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>Analytics | AAS - Advance Attendance System</title>
+    <title>Teacher | AAS - Advance Attendance System</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- App favicon -->
@@ -924,11 +924,11 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-6">
-                            <script>document.write(new Date().getFullYear())</script> © Velzon.
+                            <script>document.write(new Date().getFullYear())</script> © GEC Bhavnagar.
                         </div>
                         <div class="col-sm-6">
                             <div class="text-sm-end d-none d-sm-block">
-                                Design & Develop by Themesbrand
+                                Design & Devloped by Team-1 & Team-2
                             </div>
                         </div>
                     </div>
