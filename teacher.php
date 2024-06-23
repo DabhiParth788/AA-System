@@ -1,3 +1,18 @@
+<?php
+    include "include/dbconn.php";
+    if($_SESSION["login"] and $_SESSION["teacher"]){
+
+    $email = $_SESSION["email"];
+    $sql = "SELECT * FROM `teacher` WHERE `email` LIKE '$email'";
+
+    $result = mysqli_query($conn, $sql);
+    $detail = array();
+    if($row = mysqli_fetch_assoc($result)){
+        $detail = array($row["name"], $row["email"], $row["school"], $row["class"], $row["phone_no"]);
+    }
+}
+?>
+
 <!doctype html>
 <html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg"
     data-sidebar-image="none" data-preloader="disable" data-theme="default" data-theme-colors="default">
@@ -801,37 +816,30 @@
                         </div>
                     </div>
                     <!-- end page title -->
-
+                     
+                <?php
+                if(isset($detail) and $detail[3] != NULL){ ?>
                     <div class="card p-4 m-5">
                         <form action="">
                             <div class="mb-3">
                                 <label for="name" class="form-label">Name</label>
-                                <input type="text" class="form-control" id="teacher_name" placeholder="Enter Name">
+                                <input type="text" class="form-control" id="teacher_name" placeholder="Enter Name" 
+                                name="name" 
+                                required>
                             </div>
                             <div class="mb-3">
                                 <label for="enrollment_number" class="form-label">Enrollment Number</label>
                                 <input type="text" class="form-control" id="enrollment_number"
-                                    placeholder="Enter Enrollment Number">
+                                placeholder="Enter Enrollment Number"
+                                name="enrollment_no" 
+                                required>
                             </div>
                             <div class="d-flex gap-5">
                                 <div class="mb-3">
-                                    <label for="standard" class="form-label">Standard</label>
+                                    <label for="standard" class="form-label">class</label>
                                     <br>
-                                    <select name="standard" id="standard">
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                    </select>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="standard" class="form-label">Division</label>
-                                    <br>
-                                    <select name="standard" id="standard">
-                                        <option value="1">A</option>
-                                        <option value="2">B</option>
-                                        <option value="3">C</option>
-                                    </select>
+                                    <input type="type" class="form-control" id="class" name="class" value="<?php echo $detail[3] ?>" 
+                                    disabled/>
                                 </div>
                             </div>
 
@@ -839,10 +847,10 @@
                                 <label for="gender" class="form-label">Gender</label>
                                 <br>
                                 <div>
-                                    <input type="checkbox" name="male">
+                                    <input type="radio" name="gender" value="male" id="male">
                                     <label for="male">Male</label>
 
-                                    <input type="checkbox" name="female">
+                                    <input type="radio" name="gender" value="female" id="female">
                                     <label for="female">Female</label>
 
                                 </div>
@@ -865,11 +873,11 @@
                                 <input type="password" class="form-control" id="password" placeholder="Enter Password">
                             </div>
                             <div class="text-center">
-                                <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
                                 <input class="btn btn-primary btn-lg" type="submit" name="submit" value="Submit" />
                             </div>
                         </form>
                     </div>
+                    <?php } ?>
                     <div class="card p-4 m-5">
                         <h1 class="text-center fs-1">Student Table</h1>
                         <table class="table table-nowrap mb-0">

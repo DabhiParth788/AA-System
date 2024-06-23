@@ -10,20 +10,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST["email"];
     $password = $_POST["password"];
 
-    // $sql = "SELECT * FROM $db WHERE `email` LIKE '$email'";
+    $sql = "SELECT * FROM $db WHERE `email` LIKE '$email'";
 
-    // $result = mysqli_fetch_assoc(mysqli_query($conn, $sql));
-    // if($result["password"] != $password){
-    //     $_SESSION["login"] = TRUE;
-    //     $_SESSION["$db"] = TRUE;
-    //     $_SESSION["email"] = $email;
-    //     echo "<script type='text/javascript'>
-    //             window.location = '$db.php';
-    //           </script>";
-    // }
-    echo "<script type='text/javascript'>
-                window.location = '$db.php';
-              </script>";
+    $result = mysqli_fetch_assoc(mysqli_query($conn, $sql));
+    if(isset($result)){
+        if($result["password"] == $password){
+            $_SESSION["login"] = TRUE;
+            $_SESSION["$db"] = TRUE;
+            $_SESSION["email"] = $email;
+            echo "<script type='text/javascript'>
+                    window.location = '$db.php';
+                  </script>";
+        }
+    }
+    else {
+        $error_message = "Invalid Username/Password!";
+    }
+
+    mysqli_close($conn);
 }
 ?>
 <!DOCTYPE html>
@@ -175,6 +179,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                                     Signup</a>
                                             </p>
                                         </div>
+
+                                        <?php 
+                                            if (isset($error_message)) {
+                                                echo "<div class='alert alert-danger mt-3'>$error_message</div>";
+                                            }
+                                        ?>
                                     </div>
                                 </div>
                                 <!-- end col -->
