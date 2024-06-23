@@ -12,11 +12,6 @@
     }
 
 
-    if (isset($_GET['page'])) {
-        $page = $_GET['page'];
-    } else {
-        $page = 'profile';
-    }
 }
 ?>
 
@@ -515,6 +510,9 @@
                                 class="page-title-box d-sm-flex align-items-center justify-content-between bg-galaxy-transparent">
                                 <h4 class="mb-sm-0">
              <?php
+             if(isset($_GET['page'])){
+
+             
             $page = $_GET['page'];
 
             if ($page == 'takeAttendance') {
@@ -532,6 +530,10 @@
             else {
                  echo "Dashboard";
             }
+        }else{
+            $page = '';
+            echo "Dashboard";
+        }
        
         ?>
                                 </h4>
@@ -540,6 +542,7 @@
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">                                
         <?php
+         if(isset($_GET['page'])){
             $page = $_GET['page'];
             if ($page == 'takeAttendance') {
                 echo "Attendance";
@@ -556,10 +559,15 @@
             else {
                  echo "Dashboard";
             }
+        }else{
+            $page = '';
+            echo "Dashboard";
+        }
 
         ?></a></li>
             <li class="breadcrumb-item active">                               
         <?php
+                 if(isset($_GET['page'])){
             $page = $_GET['page'];
             if ($page == 'takeAttendance') {
                 echo "Take Attendance";
@@ -576,6 +584,10 @@
             else {
                  echo "Profile";
             }
+        }else{
+            $page = '';
+            echo "Dashboard";
+        }
 
         ?></li>
                                     </ol>
@@ -587,7 +599,7 @@
                     <!-- end page title -->
                      
             <?php
-
+         if(isset($_GET['page'])){
             
             $page = $_GET['page'];
             if ($page == 'takeAttendance') {
@@ -603,6 +615,10 @@
                 include './teacher/viewStudent.php';
             }
              else {
+                include './teacher/profile.php';
+            }
+        }      
+                else {
                 include './teacher/profile.php';
             }
 
