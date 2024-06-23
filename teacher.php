@@ -10,6 +10,13 @@
     if($row = mysqli_fetch_assoc($result)){
         $detail = array($row["name"], $row["email"], $row["school"], $row["class"], $row["phone_no"]);
     }
+
+
+    if (isset($_GET['page'])) {
+        $page = $_GET['page'];
+    } else {
+        $page = 'profile';
+    }
 }
 ?>
 
@@ -509,6 +516,7 @@
                                 <h4 class="mb-sm-0">
              <?php
             $page = $_GET['page'];
+
             if ($page == 'takeAttendance') {
                 echo "Attendance";
             }
@@ -524,6 +532,7 @@
             else {
                  echo "Dashboard";
             }
+       
         ?>
                                 </h4>
 
@@ -546,6 +555,7 @@
             else {
                  echo "Dashboard";
             }
+
         ?></a></li>
                                         <li class="breadcrumb-item active">                                <?php
             $page = $_GET['page'];
@@ -564,6 +574,7 @@
             else {
                  echo "Profile";
             }
+
         ?></li>
                                     </ol>
                                 </div>
@@ -574,6 +585,8 @@
                     <!-- end page title -->
                      
             <?php
+
+            
             $page = $_GET['page'];
             if ($page == 'takeAttendance') {
                 include './teacher/takeAttendance.php';
@@ -590,6 +603,7 @@
              else {
                 include './teacher/profile.php';
             }
+
         ?>
 
                 <!-- container-fluid -->

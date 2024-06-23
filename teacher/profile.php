@@ -9,9 +9,9 @@
                 <p>School Name : </p>
                 <p>Email : Teacher@email.com</p>
                 <p>Contact No. : 9988776655</p>
-                <p>Class : 1-C</p>
+                <p>Class : 1 - C</p>
                 <p>Education Qualification</p>
-                <a href="javascript:void(0);" class="stretched-link">More Details</a>
+                <a href="#" class="stretched-link">More Details</a>
             </div>
         </div>
     </div>
