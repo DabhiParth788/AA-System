@@ -562,7 +562,7 @@
                 echo "View Student";
             }
             else {
-                 echo "Home";
+                 echo "Profile";
             }
         ?></li>
                                     </ol>
