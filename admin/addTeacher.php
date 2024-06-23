@@ -1,5 +1,4 @@
-
-<div class="card p-4 m-5">
+<div class="card p-4 w-50" style="margin-left: 25%">
     <form action="admin.php" method="POST">
         <div class="mb-3">
             <label for="name" class="form-label">Name</label>
@@ -23,7 +22,13 @@
                 required>
         </div>
 
-        <div class="text-center">
+        <!-- Default Input Image -->
+        <div>
+            <label for="formFile" class="form-label">Image</label>
+            <input class="form-control" type="file" id="imageFile">
+        </div>
+
+        <div class="text-center mt-4">
             <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
             <input class="btn btn-primary btn-lg" type="submit" name="teacher_add" value="Submit" />
         </div>
@@ -50,4 +55,3 @@ if ($_SESSION["login"] and isset($_POST["teacher_add"])) {
     }
 }
 ?>
-

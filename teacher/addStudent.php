@@ -1,6 +1,6 @@
 <?php
 if (isset($detail) and $detail[3] != NULL) { ?>
-<div class="card p-4 m-5">
+<div class="card p-4 w-50" style="margin-left: 25%">
     <form action="" method="POST">
         <div class="mb-3">
             <label for="name" class="form-label">Name</label>
@@ -47,7 +47,14 @@ if (isset($detail) and $detail[3] != NULL) { ?>
             <label for="password" class="form-label">Password</label>
             <input type="password" class="form-control" id="password" placeholder="Enter Password" name="password" required>
         </div>
-        <div class="text-center">
+
+                <!-- Default Input Image -->
+                <div>
+            <label for="formFile" class="form-label">Image</label>
+            <input class="form-control" type="file" id="imageFile">
+        </div>
+
+        <div class="text-center mt-4">
             <input class="btn btn-primary btn-lg" type="submit" name="student_add" value="Submit" />
         </div>
     </form>
