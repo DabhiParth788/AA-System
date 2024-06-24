@@ -1,4 +1,18 @@
-<?php echo "view s";?>
+<?php 
+    if($_SESSION["login"] and $_SESSION["teacher"]){
+        $school = $detail[2];
+        $class = $detail[3];
+
+        $sql = "SELECT * FROM student WHERE `school` LIKE '$school' AND `class` LIKE '$class'";
+
+        $result = mysqli_query($conn, $sql);
+        $students = array();
+        while($student = mysqli_fetch_assoc($result)){
+            $students[] = array($student["name"], $student["enrollment_no"], $student["school"], $student["class"], $student["gender"], $student["email"], $student["phone_no"]);
+        }
+
+    }
+?>
 <!-- Hoverable Rows -->
 <div class="card">
 <table class="table table-hover table-nowrap mb-0 ">

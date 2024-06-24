@@ -68,7 +68,7 @@
         $teacher_name = $_POST["teacher_name"];
         $std = $_POST["std"];
         $div = $_POST["div"];
-        $class = "$std-$div";
+        $class = $std . "_" . $div;
 
         $sql = "INSERT INTO class (name, teacher_name, school) VALUES ('$class', '$teacher_name', '$school')";
 
