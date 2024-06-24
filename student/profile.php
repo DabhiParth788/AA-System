@@ -29,8 +29,8 @@ echo "Profile"
                                     <div class="card-body">
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div>
-                                                <p class="fw-medium text-muted mb-0">Branch</p>
-                                                <h3 class="mt-4 mx-2 ff-secondary cfs-22 fw-semibold">Information Technology</h3>
+                                                <p class="fw-medium text-muted mb-0">Standard</p>
+                                                <h3 class="mt-4 mx-2 ff-secondary cfs-22 fw-semibold"><?php echo $detail[3] ?></h3>
                                             </div>
                                             <div>
                                                 <div class="avatar-sm flex-shrink-0">
@@ -49,8 +49,8 @@ echo "Profile"
                                     <div class="card-body">
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div>
-                                                <p class="fw-medium text-muted mb-0">Semester</p>
-                                                <h3 class="mt-4 mx-2 ff-secondary cfs-22 fw-semibold">5th</h3>
+                                                <p class="fw-medium text-muted mb-0">Division</p>
+                                                <h3 class="mt-4 mx-2 ff-secondary cfs-22 fw-semibold"><?php echo $detail[4] ?></h3>
                                             </div>
                                             <div>
                                                 <div class="avatar-sm flex-shrink-0">
