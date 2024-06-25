@@ -357,12 +357,10 @@
                         </li> <!-- end Dashboard Menu -->
 
 
-                        <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">FEATURES</span>
-                        </li>
+                        <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">FEATURES</span></li>
 
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="#sidebarAuth" data-bs-toggle="collapse" role="button"
-                                aria-expanded="false" aria-controls="sidebarAuth">
+                            <a class="nav-link menu-link" href="#sidebarAuth" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarAuth">
                                 <i class="ri-account-circle-line"></i> <span data-key="t-authentication">Personal</span>
                             </a>
                             <div class="collapse menu-dropdown" id="sidebarAuth">
@@ -370,21 +368,17 @@
                                     <li class="nav-item">
                                         <a href="?page=profile"class="nav-link" role="button" aria-expanded="false"> Profile</a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link" role="button" aria-expanded="false"> Edu.
-                                            Qualifying Exam</a>
-                                    </li>
                                 </ul>
                             </div>
                         </li>
 
 
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="#sidebarTimeTable" data-bs-toggle="collapse"
-                                role="button" aria-expanded="false" aria-controls="sidebarTimeTable">
+                            <a class="nav-link menu-link" href="#sidebarTeacher" data-bs-toggle="collapse"
+                                role="button" aria-expanded="false" aria-controls="sidebarTeacher">
                                 <i class="ri-layout-grid-line"></i> <span data-key="t-pages">Teacher</span>
                             </a>
-                            <div class="collapse menu-dropdown" id="sidebarTimeTable">
+                            <div class="collapse menu-dropdown" id="sidebarTeacher">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
                                         <a href="?page=addTeacher" class="nav-link" data-key=""> Add New Teacher </a>
@@ -397,11 +391,11 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="#sidebarExam" data-bs-toggle="collapse" role="button"
-                                aria-expanded="false" aria-controls="sidebarExam">
+                            <a class="nav-link menu-link" href="#sidebarClass" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarClass">
                                 <i class="ri-pages-line"></i> <span data-key="t-pages">Class</span>
                             </a>
-                            <div class="collapse menu-dropdown" id="sidebarExam">
+                            <div class="collapse menu-dropdown" id="sidebarClass">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
                                         <a href="?page=classAllocation" class="nav-link" data-key=""> Class Allocation </a>

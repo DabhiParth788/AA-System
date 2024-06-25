@@ -11,7 +11,7 @@
 
         $result = mysqli_query($conn, $sql);
         if ($row = mysqli_fetch_assoc($result)) {
-            $detail = array($row["name"], $row["enrollment_number"], $row["school"], $row["standard"],$row["division"], $row["gender"], $row["email"]);
+            $detail = array($row["name"], $row["enrollment_number"], $row["school"],$row["class"], $row["gender"], $row["email"], $row["phone_no"]);
         }
     
 ?>
@@ -373,7 +373,6 @@
                                     <li class="nav-item">
                                         <a href="?page=profile" class="nav-link"  role="button" aria-expanded="false" > Profile</a>
                                     </li>
-
                                 </ul>
                             </div>
                         </li>
@@ -386,7 +385,7 @@
                             <div class="collapse menu-dropdown" id="sidebarTimeTable">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link" data-key=""> Time Table </a>
+                                        <a href="#" class="nav-link disabled" data-key="" > Time Table </a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="?page=attendance" class="nav-link" data-key=""> Attendance </a>
@@ -402,16 +401,16 @@
                             <div class="collapse menu-dropdown" id="sidebarExam">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link" data-key=""> Admit Card </a>
+                                        <a href="#" class="nav-link disabled" data-key=""> Admit Card </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link" data-key=""> Result </a>
+                                        <a href="#" class="nav-link disabled" data-key=""> Result </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link" data-key=""> Supplementary Exam Fee </a>
+                                        <a href="#" class="nav-link disabled" data-key=""> Supplementary Exam Fee </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link" data-key=""> Old Exam Paper </a>
+                                        <a href="#" class="nav-link disabled" data-key=""> Old Exam Paper </a>
                                     </li>
                     
                                 </ul>
@@ -425,13 +424,13 @@
                             <div class="collapse menu-dropdown" id="sidebarFee">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
-                                        <a href="landing.html" class="nav-link" data-key=""> Pay Fees </a>
+                                        <a href="#" class="nav-link disabled" data-key=""> Pay Fees </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="nft-landing.html" class="nav-link" data-key=""> Fee History </a>
+                                        <a href="#" class="nav-link disabled" data-key=""> Fee History </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="job-landing.html" class="nav-link" data-key="">Transport Fee</a>
+                                        <a href="#" class="nav-link disabled" data-key="">Transport Fee</a>
                                     </li>
                                 </ul>
                             </div>
