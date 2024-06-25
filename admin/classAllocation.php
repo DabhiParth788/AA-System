@@ -65,9 +65,9 @@
 
 <?php 
     if($_SESSION["login"] and isset($_POST["class_add"])){
-        $teacher_name = $_POST["teacher_name"];
-        $std = $_POST["std"];
-        $div = $_POST["div"];
+        $teacher_name = sanitize_input($_POST["teacher_name"]);
+        $std = sanitize_input($_POST["std"]);
+        $div = sanitize_input($_POST["div"]);
         $class = $std . "_" . $div;
 
         $sql = "INSERT INTO class (name, teacher_name, school) VALUES ('$class', '$teacher_name', '$school')";

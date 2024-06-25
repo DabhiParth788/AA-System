@@ -14,7 +14,9 @@
         $detail = array($row["name"], $row["email"], $row["school"], $row["class"], $row["phone_no"]);
     }
 
-
+    function sanitize_input($data) {
+        return htmlspecialchars(stripslashes(trim($data)));
+    }
 ?>
 
 <!doctype html>

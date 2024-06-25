@@ -14,6 +14,9 @@
         // $school = $details[2];
     }
 
+    function sanitize_input($data) {
+        return htmlspecialchars(stripslashes(trim($data)));
+    }
 ?>
 
 <!doctype html>

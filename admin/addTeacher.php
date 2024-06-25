@@ -39,10 +39,10 @@
 <?php
 
 if ($_SESSION["login"] and isset($_POST["teacher_add"])) {
-    $name = $_POST["name"];
-    $email = $_POST["email"];
-    $phone_no = $_POST["phone_no"];
-    $password = $_POST["password"];
+    $name = sanitize_input($_POST["name"]);
+    $email = sanitize_input($_POST["email"]);
+    $phone_no = sanitize_input($_POST["phone_no"]);
+    $password = sanitize_input($_POST["password"]);
 
     $sql = "INSERT INTO teacher (name, email, school, phone_no, password) VALUES ('$name', '$email', '$detail[2]', '$phone_no', '$password')";
 

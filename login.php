@@ -6,9 +6,9 @@ function sanitize_input($data) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $db = $_POST["who"];
-    $email = $_POST["email"];
-    $password = $_POST["password"];
+    $db = sanitize_input($_POST["who"]);
+    $email = sanitize_input($_POST["email"]);
+    $password = sanitize_input($_POST["password"]);
 
     $sql = "SELECT * FROM $db WHERE `email` LIKE '$email'";
 
