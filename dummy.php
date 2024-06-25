@@ -16,8 +16,8 @@
 
     // Insert dummy data into admin table
     $sql = "INSERT INTO admin (name, email, password, school, phone_no) VALUES 
-            ('Admin One', 'admin1@school.com', 'password123', 'Springfield Elementary', '555-0001'),
-            ('Admin Two', 'admin2@school.com', 'password456', 'Shelbyville High', '555-0002')";
+            ('Admin One', 'admin1@school.com', 'password123', 'SpringfieldElementary', '555-0001'),
+            ('Admin Two', 'admin2@school.com', 'password456', 'ShelbyvilleHigh', '555-0002')";
 
     $result = mysqli_query($conn, $sql);
 
@@ -31,9 +31,9 @@
 
     // Insert dummy data into class table
     $sql = "INSERT INTO class (name, teacher_name, school) VALUES 
-            ('Math 101', 'John Doe', 'Springfield Elementary'),
-            ('Science 202', 'Jane Smith', 'Springfield Elementary'),
-            ('History 303', 'Jim Brown', 'Shelbyville High')";
+            ('Math_101', 'John Doe', 'SpringfieldElementary'),
+            ('Science_202', 'Jane Smith', 'SpringfieldElementary'),
+            ('History_303', 'Jim Brown', 'ShelbyvilleHigh')";
 
     $result = mysqli_query($conn, $sql);
 
@@ -47,9 +47,9 @@
 
     // Insert dummy data into teacher table
     $sql = "INSERT INTO teacher (name, email, school, class, phone_no, password) VALUES 
-            ('John Doe', 'johndoe@school.com', 'Springfield Elementary', 'Math 101', '555-1234', 'johnpassword'),
-            ('Jane Smith', 'janesmith@school.com', 'Springfield Elementary', 'Science 202', '555-5678', 'janepassword'),
-            ('Jim Brown', 'jimbrown@school.com', 'Shelbyville High', 'History 303', '555-8765', 'jimpassword')";
+            ('John Doe', 'johndoe@school.com', 'SpringfieldElementary', 'Math_101', '555-1234', 'johnpassword'),
+            ('Jane Smith', 'janesmith@school.com', 'SpringfieldElementary', 'Science_202', '555-5678', 'janepassword'),
+            ('Jim Brown', 'jimbrown@school.com', 'ShelbyvilleHigh', 'History_303', '555-8765', 'jimpassword')";
 
     $result = mysqli_query($conn, $sql);
 
@@ -63,11 +63,11 @@
 
     // Insert dummy data into student table
     $sql = "INSERT INTO student (name, enrollment_number, school, class, gender, email, password) VALUES 
-            ('Bart Simpson', '0001', 'Springfield Elementary', 'Math 101', 'M', 'bartsimpson@school.com', 'bartpassword'),
-            ('Lisa Simpson', '0002', 'Springfield Elementary', 'Science 202', 'F', 'lisasimpson@school.com', 'lisapassword'),
-            ('Milhouse Van Houten', '0003', 'Springfield Elementary', 'Math 101', 'M', 'milhouse@school.com', 'milhousepassword'),
-            ('Nelson Muntz', '0004', 'Springfield Elementary', 'History 303', 'M', 'nelson@school.com', 'nelsonpassword'),
-            ('Martin Prince', '0005', 'Springfield Elementary', 'Science 202', 'M', 'martin@school.com', 'martinpassword')";
+            ('Bart Simpson', '0001', 'SpringfieldElementary', 'Math_101', 'M', 'bartsimpson@school.com', 'bartpassword'),
+            ('Lisa Simpson', '0002', 'SpringfieldElementary', 'Science_202', 'F', 'lisasimpson@school.com', 'lisapassword'),
+            ('Milhouse Van Houten', '0003', 'SpringfieldElementary', 'Math_101', 'M', 'milhouse@school.com', 'milhousepassword'),
+            ('Nelson Muntz', '0004', 'SpringfieldElementary', 'History_303', 'M', 'nelson@school.com', 'nelsonpassword'),
+            ('Martin Prince', '0005', 'SpringfieldElementary', 'Science_202', 'M', 'martin@school.com', 'martinpassword')";
 
     $result = mysqli_query($conn, $sql);
 

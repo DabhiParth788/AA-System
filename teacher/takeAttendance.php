@@ -30,7 +30,7 @@ if($_SESSION["login"] and $_SESSION["teacher"]){
         $check = "SHOW TABLES LIKE '$tb'";
         $result = mysqli_query($conn, $check);
         if($result and mysqli_num_rows($result) == 1){
-            $newSQL = "SELECT date FROM $tb WHERE date LIKE CURRENT_DATE";
+            $newSQL = "SELECT date FROM `$tb` WHERE date LIKE CURRENT_DATE";
     
             $result = mysqli_query($conn, $newSQL);
 
@@ -41,17 +41,20 @@ if($_SESSION["login"] and $_SESSION["teacher"]){
                       </script>";
             }
             else{
-                echo "<h1>Already Added!</h1>";
+                echo "<div class='mx-5 alert alert-success material-shadow' role='alert'>
+    Attendance already taken for today!
+</div>";
             }
 
         }
         else{
-            $sql1 = "CREATE TABLE $tb (`date` DATE DEFAULT CURRENT_DATE PRIMARY KEY, ";
+            $sql1 = "CREATE TABLE `$tb` (`date` DATE DEFAULT CURRENT_DATE PRIMARY KEY, ";
             foreach($students as $student){
                 $en = $student[1];
                 $sql1 = $sql1 . "`$en` BOOLEAN DEFAULT FALSE, ";
             }
             $sql1 = $sql1 . "`total` int NOT NULL)";
+            echo $sql1;
             if(mysqli_query($conn, $sql1)){
                 echo "Table created";
                 if(mysqli_query($conn, $sql)){
