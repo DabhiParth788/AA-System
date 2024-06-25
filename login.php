@@ -130,15 +130,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                         <div class="mt-4">
                                             <form action="login.php" method="post">
 
-                                                <div class="btn-group material-shadow">
-                                                    <select name="who" id="who">
+                                                <div class="btn-group material-shadow no-border">     
+                                                    <select name="who" id="who" class="p-1 " style= "width:100px;   border-color:coral" >
                                                         <option value="admin">Admin </option>
                                                         <option value="teacher">Teacher</option>
                                                         <option value="student">Student</option>
                                                     </select>
                                                 </div><!-- /btn-group -->
 
-                                                <div class="mb-3">
+                                                <div class="mb-3 mt-4">
                                                     <label for="username" class="form-label">Email</label>
                                                     <input type="email" class="form-control" id="email"
                                                         name="email" placeholder="Enter email" required />
@@ -160,8 +160,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="checkbox" value=""
-                                                        id="auth-remember-check" />
-                                                    <label class="form-check-label" for="auth-remember-check">Remember me</label>
+                                                        id="auth-remember-check" checked/>
+                                                    <label class="form-check-label" for="auth-remember-check" >Remember me</label>
                                                 </div>
 
                                                 <div class="mt-4">
@@ -171,15 +171,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                             </form>
                                         </div>
 
-                                        <div class="mt-5 text-center">
-                                            <p class="mb-0">
-                                                Don't have an account ?
-                                                <a href="signup.html"
-                                                    class="fw-semibold text-primary text-decoration-underline">
-                                                    Signup</a>
-                                            </p>
-                                        </div>
-
+                                       
                                         <?php 
                                             if (isset($error_message)) {
                                                 echo "<div class='alert alert-danger mt-3'>$error_message</div>";
@@ -212,8 +204,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <script>
                                     document.write(new Date().getFullYear());
                                 </script>
-                                Velzon. Crafted with
-                                <i class="mdi mdi-heart text-danger"></i> by Themesbrand
+                                GEC Bhavnagar
                             </p>
                         </div>
                     </div>
