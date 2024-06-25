@@ -1,3 +1,28 @@
 <?php
-echo "Attendance"
+    if($_SESSION["login"]){
+        $school = $detail[2];
+        $class = $detail[3];
+        $tb = "$school" . "_" . "$class";
+    
+        $total = 0;
+        
+        $sql = "SELECT date FROM $tb";
+        $total = mysqli_num_rows(mysqli_query($conn, $sql));
+        
+        $sql = "SELECT date FROM $tb WHERE `$detail[1]` = 1";
+        $present = mysqli_num_rows(mysqli_query($conn, $sql));
+    }
 ?>
+
+<div class="row">
+    <div class="col-xl-6">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title mb-0">Pie Chart</h4>
+            </div>
+            <div class="card-body">
+                <canvas id="pieChart" class="chartjs-chart" data-colors='["--vz-success", "--vz-light"]'></canvas>
+            </div>
+        </div>
+    </div> <!-- end col -->
+</div>
