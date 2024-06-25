@@ -30,7 +30,12 @@
             echo "<td>".$sr."</td>";
             echo "<td>".$teacher[0]."</td>";
             echo "<td>".$teacher[1]."</td>";
-            echo "<td>".$teacher[3]."</td>";
+            if ($teacher[3] != NULL) {
+                echo "<td>".$teacher[3]."</td>";
+            } else {
+                echo "<td>No Class Assigned  <a href='?page=classAllocation' class='text-decoration-none' > assign now </a> </td>";
+            }
+            
             echo "<td>".$teacher[4]."</td>";
             echo "</tr>";
             $sr++;
@@ -41,8 +46,8 @@
 <?php else: ?>
     <!-- Message is displayed if there is no data -->
     <div class="alert border-0 alert-danger material-shadow" role="alert">
-    <strong>No teachers</strong> found for this school.
-        Please <strong>register new Teacher </strong>  <br> <a href="?page=addTeacher">Add New Teacher here</a> -check it out!
+    <strong>No Teacher</strong> found for this school.
+        Please <strong>register new Teacher </strong>  <br><b><a href="?page=addTeacher" class="text-decoration-none">Add New Teacher here</a></b> -check it out!
     </div>
 <?php endif; ?>
 </div>

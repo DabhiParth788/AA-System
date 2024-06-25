@@ -6,6 +6,9 @@
     $school = $detail[2];
     $class = $detail[3];
 
+    if ($class != NULL ) {
+//    Class is assigned 
+    
     $sql = "SELECT enrollment_number, name FROM student WHERE `school` LIKE '$school' AND `class` LIKE '$class'";
 
     $result = mysqli_query($conn, $sql);
@@ -15,6 +18,13 @@
     }
 
     $tb = "$school". "_" . "$class";
+
+    $tb = "{$school}_{$class}";
+    $check = "SHOW TABLES LIKE '$tb'";
+    $table_exists_result = mysqli_query($conn, $check);
+
+    if(mysqli_num_rows($table_exists_result) > 0) {
+        // Table exists, proceed with attendance retrieval
     $sql = "SELECT * FROM `$tb` WHERE DATE(date) = '$date'";
     $result = mysqli_query($conn, $sql);
     $attendance = array();
@@ -31,6 +41,7 @@
     while($dt = mysqli_fetch_assoc($result)){
         $dates[] = $dt["date"];
     }
+
 ?>
 
 
@@ -91,8 +102,8 @@
             </tr>
         <?php } ?>
     </tbody>
-</table>
-        </div>
+    </table>
+    </div>
         
         <!-- end card -->
          
@@ -100,3 +111,23 @@
         <!-- end col -->
          
 </div>
+
+<?php
+    } else {
+        // Table does not exist
+    ?>
+        <div class="alert alert-info material-shadow" role="alert">
+            No attendance data to show for the selected class. <br>
+            You haven't take any attendance for this class yet <br>
+            <b><a href="?page=takeAttendance" class="text-decoration-none">Take Attendance here</a></b> - check it out!
+        </div>
+    <?php
+    }
+} else {
+    // Class is NULL or not assigned
+?>
+    <div class="alert alert-info material-shadow" role="alert">
+        You cannot Take/View attendance of students at this time because you have not been assigned a class by the admin.
+        Please contact the administration to have a class assigned to you.
+    </div>
+<?php } ?>

@@ -59,6 +59,12 @@ if (isset($detail) and $detail[3] != NULL) { ?>
         </div>
     </form>
 </div>
+<?php }else{?>
+    <div class="alert alert-info material-shadow" role="alert">
+    You <b> cannot register new students</b> at this time because you have <b> not been assigned a class </b> by the admin. <br> 
+    Please contact the administration to have a class assigned to you.
+</div>
+     <?php }?>
 <?php 
     if($_SESSION["login"] and isset($_POST["student_add"])){
         $name = sanitize_input($_POST["name"]);
@@ -80,5 +86,5 @@ if (isset($detail) and $detail[3] != NULL) { ?>
             echo "<h3>  Failed to upload!</h3>";
         }
     }
-}
+
 ?>
