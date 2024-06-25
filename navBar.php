@@ -246,7 +246,7 @@
                                         src="assets/images/users/user-dummy-img.jpg" alt="Header Avatar">
                                     <span class="text-start ms-xl-2">
                                         <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text"> <?php echo $detail[0]?> </span>
-                                        <span class="d-none d-xl-block ms-1 fs-12 user-name-sub-text"> Active Teacher
+                                        <span class="d-none d-xl-block ms-1 fs-12 user-name-sub-text"> <?php echo $curr; ?>
                                         </span>
                                     </span>
                                 </span>

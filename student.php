@@ -1,5 +1,6 @@
 <?php
     include "include/dbconn.php";
+    $curr = "Student";
     if (!isset($_SESSION["login"]) || !$_SESSION["login"] || !isset($_SESSION["student"]) || !$_SESSION["student"]) {
         header('Location: login.php');
         exit;
