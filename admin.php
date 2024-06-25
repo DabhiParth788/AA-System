@@ -11,6 +11,7 @@
     $result = mysqli_query($conn, $sql);
     if($row = mysqli_fetch_assoc($result)){
         $detail = array($row["name"], $row["email"], $row["school"]);
+        // $school = $details[2];
     }
 
 ?>

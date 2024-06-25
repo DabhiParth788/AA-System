@@ -1,4 +1,16 @@
 <?php echo "view teacher";?>
+<?php
+    include "include/dbconn.php";
+
+
+    $sql = "SELECT * FROM `teacher` WHERE `school` LIKE '$detail[2]'";
+
+    $result = mysqli_query($conn, $sql);
+    if($row = mysqli_fetch_assoc($result)){
+        $teacherDetail[] = array($row["name"], $row["email"], $row["school"], $row["class"], $row["phone_no"]);
+    }
+
+?>
 
 <!-- Hoverable Rows -->
 <div class="card">
@@ -6,30 +18,31 @@
     <thead>
         <tr>
 
-            <th scope="col">Enrollment Number</th>
+            <th scope="col">sr no.</th>
             <th scope="col">Name</th>
             <th scope="col">Email</th>
             <th scope="col">Contact Number</th>
             <th scope="col">Details</th>
         </tr>
     </thead>
-    <tbody>
-        <tr>
+    <?php 
+    $sr = 1;
+        if($result->num_rows > 0){
+            while($row = $result->fetch_assoc()){
+                echo "<tr>";
+                echo "<td>".$sr."</td>";
+                echo "<td>".$row['name']."</td>";
+                echo "<td>".$row['email']."</td>";
+                echo "<td>".$row['class']."</td>";
+                echo "<td>".$row['phone_no']."</td>";
+                echo "</tr>";
+                $sr++;
+            }     
+        }else{
+            echo "<tr><td colspan='5'>No Data Found</td></tr>";
+        }
+        $conn ->close();
 
-            <td>210210116029</td>
-            <td>Harshit Dodi</td>
-            <td>Dodi@gmail.com</td>
-            <td>1234567890</td>
-            <td><a href="javascript:void(0);">More</a></td>
-        </tr>
-        <tr>
-
-            <td>210210116031</td>
-            <td>Parth The Great</td>
-            <td>xyz@gmail.com</td>
-            <td>5252552000</td>
-            <td><a href="javascript:void(0);">More</a></td>
-</tr>
-    </tbody>
+    ?>
 </table>
 </div>
