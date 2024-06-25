@@ -61,13 +61,13 @@ if (isset($detail) and $detail[3] != NULL) { ?>
 </div>
 <?php 
     if($_SESSION["login"] and isset($_POST["student_add"])){
-        $name = $_POST["name"];
-        $enrollment_no = $_POST["enrollment_no"];
+        $name = sanitize_input($_POST["name"]);
+        $enrollment_no = sanitize_input($_POST["enrollment_no"]);
         $class = $detail[3];
-        $gender = $_POST["gender"];
-        $email = $_POST["email"];
-        $phone_no = $_POST["phone_no"];
-        $password = $_POST["password"];
+        $gender = sanitize_input($_POST["gender"]);
+        $email = sanitize_input($_POST["email"]);
+        $phone_no = sanitize_input($_POST["phone_no"]);
+        $password = sanitize_input($_POST["password"]);
 
         $sql = "INSERT INTO student (name, enrollment_number, school, class, gender, email, password, phone_no) VALUES ('$name', '$enrollment_no', '$detail[2]', '$class', '$gender', '$email', '$password', '$phone_no')";
 
