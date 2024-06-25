@@ -1,4 +1,4 @@
-<?php echo "profile";?>
+
 
 <div class="d-flex w-50  " style="margin-left: 25%">
     <div class="card-body card ">

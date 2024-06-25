@@ -18,31 +18,31 @@
 <table class="table table-hover table-nowrap mb-0 ">
     <thead>
         <tr>
-
-            <th scope="col">Enrollment Number</th>
+            <th scope="col">sr no.</th>
+            <th scope="col">Enrollment No.</th>
             <th scope="col">Name</th>
+            <th scope="col">Class</th>
             <th scope="col">Email</th>
             <th scope="col">Contact Number</th>
-            <th scope="col">Details</th>
         </tr>
     </thead>
-    <tbody>
-        <tr>
-
-            <td>210210116029</td>
-            <td>Harshit Dodi</td>
-            <td>Dodi@gmail.com</td>
-            <td>1234567890</td>
-            <td><a href="javascript:void(0);">More</a></td>
-        </tr>
-        <tr>
-
-            <td>210210116031</td>
-            <td>Parth The Great</td>
-            <td>xyz@gmail.com</td>
-            <td>5252552000</td>
-            <td><a href="javascript:void(0);">More</a></td>
-</tr>
-    </tbody>
+    <?php 
+    $sr = 1;
+        if(mysqli_num_rows($result) > 0){
+            foreach($students as $student){
+                echo "<tr>";
+                echo "<td>".$sr."</td>";
+                echo "<td>".$student[1]."</td>";
+                echo "<td>".$student[0]."</td>";
+                echo "<td>".$student[3]."</td>";
+                echo "<td>".$student[5]."</td>";
+                echo "<td>".$student[6]."</td>";
+                echo "</tr>";
+                $sr++;
+            }     
+        }else{
+            echo "<tr><td colspan='5'>No Data Found</td></tr>";
+        }
+    ?>
 </table>
 </div>
