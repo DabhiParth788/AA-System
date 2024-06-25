@@ -1,12 +1,8 @@
-<?php echo "view teacher";?>
 <?php
-    include "include/dbconn.php";
-
-
     $sql = "SELECT * FROM `teacher` WHERE `school` LIKE '$detail[2]'";
-
+    $teacherDetail = array();
     $result = mysqli_query($conn, $sql);
-    if($row = mysqli_fetch_assoc($result)){
+    while($row = mysqli_fetch_assoc($result)){
         $teacherDetail[] = array($row["name"], $row["email"], $row["school"], $row["class"], $row["phone_no"]);
     }
 
@@ -17,32 +13,29 @@
 <table class="table table-hover table-nowrap mb-0 ">
     <thead>
         <tr>
-
             <th scope="col">sr no.</th>
             <th scope="col">Name</th>
             <th scope="col">Email</th>
+            <th scope="col">Class</th>
             <th scope="col">Contact Number</th>
-            <th scope="col">Details</th>
         </tr>
     </thead>
     <?php 
     $sr = 1;
-        if($result->num_rows > 0){
-            while($row = $result->fetch_assoc()){
+        if(mysqli_num_rows($result) > 0){
+            foreach($teacherDetail as $teacher){
                 echo "<tr>";
                 echo "<td>".$sr."</td>";
-                echo "<td>".$row['name']."</td>";
-                echo "<td>".$row['email']."</td>";
-                echo "<td>".$row['class']."</td>";
-                echo "<td>".$row['phone_no']."</td>";
+                echo "<td>".$teacher[0]."</td>";
+                echo "<td>".$teacher[1]."</td>";
+                echo "<td>".$teacher[3]."</td>";
+                echo "<td>".$teacher[4]."</td>";
                 echo "</tr>";
                 $sr++;
             }     
         }else{
             echo "<tr><td colspan='5'>No Data Found</td></tr>";
         }
-        $conn ->close();
-
     ?>
 </table>
 </div>
