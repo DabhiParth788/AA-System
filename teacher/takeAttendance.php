@@ -3,7 +3,7 @@ if($_SESSION["login"] and $_SESSION["teacher"]){
     $school = $detail[2];
     $class = $detail[3];
 
-    $sql = "SELECT enrollment_no, name FROM student WHERE `school` LIKE '$school' AND `class` LIKE '$class'";
+    $sql = "SELECT enrollment_number, name FROM student WHERE `school` LIKE '$school' AND `class` LIKE '$class'";
 
     $result = mysqli_query($conn, $sql);
     $students = array();
@@ -30,14 +30,20 @@ if($_SESSION["login"] and $_SESSION["teacher"]){
         $check = "SHOW TABLES LIKE '$tb'";
         $result = mysqli_query($conn, $check);
         if($result and mysqli_num_rows($result) == 1){
-            $newSQL = "SELECT name FROM $tb WHERE date LIKE CURRENT_DATE";
+            $newSQL = "SELECT date FROM $tb WHERE date LIKE CURRENT_DATE";
     
-            $result = mysw
+            $result = mysqli_query($conn, $newSQL);
 
-            mysqli_query($conn, $sql);
-            echo "<script type='text/javascript'>
-                    window.location = 'teacher.php';
-                  </script>";
+            if(mysqli_num_rows($result) == 0){
+                mysqli_query($conn, $sql);
+                echo "<script type='text/javascript'>
+                        window.location = 'teacher.php';
+                      </script>";
+            }
+            else{
+                echo "<h1>Already Added!</h1>";
+            }
+
         }
         else{
             $sql1 = "CREATE TABLE $tb (`date` DATE DEFAULT CURRENT_DATE PRIMARY KEY, ";
