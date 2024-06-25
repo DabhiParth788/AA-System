@@ -25,3 +25,44 @@
     }
 }
 ?>
+
+
+<div class="row">
+     <div class="col-lg-12">
+        <div class="card">
+            <div>
+
+                <div class="card-header">
+                        <label id="date" name="date" class="card-title mb-0">Date: </>           
+                        <select name="date" id="date">
+                            <option value="1" selected>
+                                <?php
+                                $currentDate = date("Y-m-d");
+                                echo "$currentDate";
+                                ?>
+                            </option>
+                            
+                        </select>
+                </div>
+            </div>
+            <table class="table table-nowrap">
+    <thead>
+        <tr>
+            <th scope="col">SR NO</th>
+            <th scope="col">Enrollment Number</th>
+            <th scope="col">Name</th>
+            <th scope="col">Status</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+        </div>
+        
+        <!-- end card -->
+         
+    </div>
+        <!-- end col -->
+         
+</div>
