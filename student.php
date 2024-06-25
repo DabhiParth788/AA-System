@@ -50,7 +50,7 @@
     <!-- Begin page -->
     <div id="layout-wrapper">
 
-        <header id="page-topbar">
+    <header id="page-topbar">
     <div class="layout-width">
         <div class="navbar-header">
             <div class="d-flex">
@@ -371,12 +371,6 @@
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
                                         <a href="?page=profile" class="nav-link"  role="button" aria-expanded="false" > Profile</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link"  role="button" aria-expanded="false" > Edu. Qualifying Exam</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="?page=activity" class="nav-link"  role="button" aria-expanded="false" >Activity</a>
                                     </li>
 
                                 </ul>

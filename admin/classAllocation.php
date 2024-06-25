@@ -12,25 +12,29 @@
     }
 ?>
 
-<div class="card p-4 m-5">
-                        <form action="" method="POST">
-                            <div class="mb-3">
-                                <label for="teacher_name" class="form-label">Teacher Name</label>
-                                <br>
-                                <select name="teacher_name" id="teacher_name">
+<div class="card p-4 m-5 ">
+    <form action="" method="POST">
+                            
+
+                            <div class="mb-3 ">
+                                <div class="">
+                                <label for="teacher_name" class="form-label ">Teacher Name: </label>
+                                <select name="teacher_name" id="teacher_name " style="width: 184px" class="m-2">
+                                    <option value="SELECT">SELECT</option>
                                     <?php 
                                         foreach($teacher as $item){
                                     ?>
                                         <option value="<?php echo $item; ?>"><?php echo $item; ?></option>
                                     <?php } ?>
                                 </select>
+                                </div>
                             </div>
 
-                            <div class="d-flex gap-5">
+                            <div class="d-flex gap-5 ">
                                 <div class="mb-3">
-                                    <label for="std" class="form-label">Standard</label>
-                                    <br>
-                                    <select name="std" id="std">
+                                    <label for="std" class="form-label " >Standard: </label>
+                                    
+                                    <select name="std" id="std" style="width: 50px" class="m-2">
                                         <?php 
                                             for($x = 1; $x < 13; $x++){
                                         ?>
@@ -41,9 +45,9 @@
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="div" class="form-label">Division</label>
-                                    <br>
-                                    <select name="div" id="div">
+                                    <label for="div" class="form-label">Division: </label>
+                                    
+                                    <select name="div" id="div" style="width: 50px" class="m-2">
                                         <option value="A">A</option>
                                         <option value="B">B</option>
                                         <option value="C">C</option>
@@ -54,8 +58,9 @@
                                 </div>
                             </div>
 
+
                             <div class="text-center">
-                                <input class="btn btn-primary btn-lg" type="submit" name="class_add" value="Create Class" />
+                                <input class="btn btn-primary btn-md" type="submit" name="class_add" value="Create Class" />
                             </div>
                         </form>
                     </div>
