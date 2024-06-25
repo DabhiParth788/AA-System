@@ -1,5 +1,8 @@
 <?php 
-    if($_GET["date"]){
+    $date = date("Y-m-d");
+    if(isset($_GET["date"])){
+        $date = sanitize_input($_GET["date"]);
+    }
     $school = $detail[2];
     $class = $detail[3];
 
@@ -11,19 +14,23 @@
         $students[] = array($student["name"], $student["enrollment_number"]);
     }
 
-    $date = $_GET["date"];
     $tb = "$school". "_" . "$class";
-    $sql = "SELECT * FROM $tb WHERE date like $date";
+    $sql = "SELECT * FROM `$tb` WHERE DATE(date) = '$date'";
     $result = mysqli_query($conn, $sql);
     $attendance = array();
     if($att = mysqli_fetch_assoc($result)){
+        $attendance = array();
         foreach($students as $stu){
-            $temp = array();
-            $temp[] = $att[$stu];
+            $attendance[] = $att[$stu[1]];
         }
-        $attendance = $temp;
     }
-}
+
+    $dates = array();
+    $sql = "SELECT date FROM $tb ORDER BY date DESC";
+    $result = mysqli_query($conn, $sql);
+    while($dt = mysqli_fetch_assoc($result)){
+        $dates[] = $dt["date"];
+    }
 ?>
 
 
@@ -31,18 +38,22 @@
      <div class="col-lg-12">
         <div class="card">
             <div>
-
                 <div class="card-header">
+                    <form action="teacher.php?page=viewAttendance" method="GET">
+                        <input type="text" name="page" id="page" value="viewAttendance" hidden>
                         <label id="date" name="date" class="card-title mb-0">Date: </>           
-                        <select name="date" id="date">
-                            <option value="1" selected>
-                                <?php
-                                $currentDate = date("Y-m-d");
-                                echo "$currentDate";
-                                ?>
-                            </option>
-                            
+                        <select name="date" id="date" onchange="this.form.submit()">
+                            <?php
+                                foreach($dates as $dt){ ?>
+                                    <option value="<?php echo $dt ?>" <?php if($dt == $date){ ?>
+                                        selected
+                                    <?php } ?>>
+                                    <?php echo $dt ?>
+                                </option>
+                            <?php    }
+                            ?>
                         </select>
+                    </form>
                 </div>
             </div>
             <table class="table table-nowrap">
@@ -55,7 +66,30 @@
         </tr>
     </thead>
     <tbody>
-
+        <?php $index = 0;
+        foreach($students as $st){ 
+            $index += 1; ?>
+            <tr>
+                <th scope="row">
+                    <?php echo $index; ?>
+                </th>
+                <td>
+                    <?php echo $st[1]; ?>
+                </td>
+                <td>
+                    <?php echo $st[0]; ?>
+                </td>
+                <td>
+                    <?php 
+                        if($attendance[$index - 1]){
+                            echo "YES";
+                        }else{
+                            echo "NO";
+                        }
+                    ?>
+                </td>
+            </tr>
+        <?php } ?>
     </tbody>
 </table>
         </div>

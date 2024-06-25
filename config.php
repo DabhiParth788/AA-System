@@ -48,8 +48,7 @@
 
     echo `<br>`;
 
-    $sql = "CREATE TABLE `student` (`name` VARCHAR(100) NOT NULL, `enrollment_number` VARCHAR(50) NOT NULL PRIMARY KEY, `school` VARCHAR(100) NOT NULL, `class` VARCHAR(50) NOT NULL, `gender` CHAR(1), `email` VARCHAR(255) NOT NULL, `password` VARCHAR(50) NOT NULL
-    )";
+    $sql = "CREATE TABLE `student` (`name` VARCHAR(100) NOT NULL, `enrollment_number` VARCHAR(50) NOT NULL PRIMARY KEY, `school` VARCHAR(100) NOT NULL, `class` VARCHAR(50) NOT NULL, `gender` CHAR(1), `email` VARCHAR(255) NOT NULL, `password` VARCHAR(50) NOT NULL, `phone_no` VARCHAR(12) NOT NULL)";
 
     $result = mysqli_query($conn, $sql);
 
