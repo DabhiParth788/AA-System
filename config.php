@@ -75,7 +75,7 @@
 
     echo `<br>`;
 
-    $sql = "CREATE TABLE `admin` (`name` VARCHAR(50) NOT NULL, `email` VARCHAR(255) NOT NULL PRIMARY KEY, `password` VARCHAR(100) NOT NULL, `school` VARCHAR(100) NOT NULL UNIQUE)";
+    $sql = "CREATE TABLE `admin` (`name` VARCHAR(50) NOT NULL, `email` VARCHAR(255) NOT NULL PRIMARY KEY, `password` VARCHAR(100) NOT NULL, `school` VARCHAR(100) NOT NULL UNIQUE, `phone_no` VARCHAR(12) NOT NULL)";
 
     $result = mysqli_query($conn, $sql);
 

@@ -69,7 +69,7 @@ if (isset($detail) and $detail[3] != NULL) { ?>
         $phone_no = $_POST["phone_no"];
         $password = $_POST["password"];
 
-        $sql = "INSERT INTO student (name, enrollment_no, school, class, gender, email, password, phone_no) VALUES ('$name', '$enrollment_no', '$detail[2]', '$class', '$gender', '$email', '$password', '$phone_no')";
+        $sql = "INSERT INTO student (name, enrollment_number, school, class, gender, email, password, phone_no) VALUES ('$name', '$enrollment_no', '$detail[2]', '$class', '$gender', '$email', '$password', '$phone_no')";
 
         if(mysqli_query($conn, $sql)){
             echo "<h3>  Image uploaded successfully!</h3>";

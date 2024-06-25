@@ -8,7 +8,7 @@
         $result = mysqli_query($conn, $sql);
         $students = array();
         while($student = mysqli_fetch_assoc($result)){
-            $students[] = array($student["name"], $student["enrollment_no"], $student["school"], $student["class"], $student["gender"], $student["email"], $student["phone_no"]);
+            $students[] = array($student["name"], $student["enrollment_number"], $student["school"], $student["class"], $student["gender"], $student["email"], $student["phone_no"]);
         }
 
     }
