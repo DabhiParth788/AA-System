@@ -14,6 +14,8 @@
     }
 ?>
 <!-- Hoverable Rows -->
+<?php if (mysqli_num_rows($result) > 0): ?>
+
 <div class="card">
 <table class="table table-hover table-nowrap mb-0 ">
     <thead>
@@ -45,4 +47,11 @@
         }
     ?>
 </table>
+<?php else: ?>
+    <!-- Message is displayed if there is no data -->
+    <div class="alert border-0 alert-danger material-shadow" role="alert">
+    <strong>No Student</strong> found Under Your Class.
+        Please <strong>Register New Student </strong>  <br> <b> <a href="?page=addStudent" class="text-decoration-none">Add New Student here</a></b> -check it out!
+    </div>
+<?php endif; ?>
 </div>

@@ -12,30 +12,37 @@
     }
 ?>
 
-<!-- Hoverable Rows -->
-<div class="card">
-<table class="table table-hover table-nowrap mb-0 ">
-    <thead>
-        <tr>
-            <th scope="col">sr no.</th>
-            <th scope="col">Class Name</th>
-            <th scope="col">Teacher Name</th>
-        </tr>
-    </thead>
-    <?php 
-    $sr = 1;
-        if(mysqli_num_rows($result) > 0){
-            foreach($classes as $class){
-                echo "<tr>";
-                echo "<td>".$sr."</td>";
-                echo "<td>".$class[0]."</td>";
-                echo "<td>".$class[1]."</td>";
-                echo "</tr>";
-                $sr++;
-            }     
-        }else{
-            echo "<tr><td colspan='5'>No Data Found</td></tr>";
-        }
-    ?>
-</table>
+
+<?php if (count($classes) > 0): ?>
+    <div class="card">
+    <!-- Table is displayed only if there is data -->
+    <table class="table table-hover table-nowrap mb-0">
+        <thead>
+            <tr>
+                <th scope="col">sr no.</th>
+                <th scope="col">Class Name</th>
+                <th scope="col">Teacher Name</th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php 
+        $sr = 1;
+        foreach($classes as $class){
+            echo "<tr>";
+            echo "<td>".$sr."</td>";
+            echo "<td>".$class[0]."</td>";
+            echo "<td>".$class[1]."</td>";
+            echo "</tr>";
+            $sr++;
+        }     
+        ?>
+        </tbody>
+    </table>
+<?php else: ?>
+    <!-- Message is displayed if there is no data -->
+    <div class="alert border-0 alert-danger material-shadow" role="alert">
+    <strong>No Classes</strong> found for this school.
+        Please <strong>Allocate New Class </strong>  <br> <a href="?page=classAllocation">Allocate Class here</a> -check it out!
+    </div>
+<?php endif; ?>
 </div>

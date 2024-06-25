@@ -371,7 +371,6 @@ if ($row = mysqli_fetch_assoc($result)) {
                                             <li class="nav-item">
                                                 <a href="?page=profile" class="nav-link" role="button" aria-expanded="false" > Profile</a>
                                             </li>
-
                                         </ul>
                                     </div>
                                 </li>
