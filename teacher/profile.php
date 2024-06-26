@@ -11,7 +11,10 @@
                 <p>Contact No. : <?php echo $detail[4]?></p>
                 <p>Class : <?php echo $detail[3]?></p>
                 <p>Education Qualification</p>
-                <a href="#" class="stretched-link">More Details</a>
+                <div class="d-flex justify-content-center ">
+                    <medium>
+                        <a href="#" class="stretched-link">More Details</a>
+                    </medium>
             </div>
         </div>
     </div>
