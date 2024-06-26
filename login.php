@@ -131,7 +131,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                             <form action="login.php" method="post">
 
                                                 <div class="btn-group material-shadow no-border">     
-                                                    <select name="who" id="who" class="p-1 " style= "width:100px;   border-color:coral" >
+                                                    <select name="who" id="who" class="p-1 " style= "width:100px;" >
                                                         <option value="admin">Admin </option>
                                                         <option value="teacher">Teacher</option>
                                                         <option value="student">Student</option>

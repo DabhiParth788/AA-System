@@ -1,4 +1,3 @@
-<?php echo "profile";?>
 
 <div class="d-flex w-50  " style="margin-left: 25%">
     <div class="card-body card ">
@@ -9,7 +8,11 @@
                 <p>School Name : <?php echo $detail[2] ?></p>
                 <p>Email : <?php echo $detail[1] ?></p>
                 <p>Contact No. : 9988776655</p>
-                <a href="#" class="stretched-link">More Details</a>
+                <div class="d-flex justify-content-center ">
+                    <medium>
+                        <a href="#" class="stretched-link">More Details</a>
+                    </medium>
+                </div>
             </div>
         </div>
     </div>
