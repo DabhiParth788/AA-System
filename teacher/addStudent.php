@@ -67,6 +67,11 @@ if (isset($detail) and $detail[3] != NULL) { ?>
      <?php }?>
 <?php 
     if($_SESSION["login"] and isset($_POST["student_add"])){
+        $school = $detail[2];
+        $class = $detail[3];
+
+        $tb = "$school". "_" . "$class";
+
         $name = sanitize_input($_POST["name"]);
         $enrollment_no = sanitize_input($_POST["enrollment_no"]);
         $class = $detail[3];
@@ -74,11 +79,20 @@ if (isset($detail) and $detail[3] != NULL) { ?>
         $email = sanitize_input($_POST["email"]);
         $phone_no = sanitize_input($_POST["phone_no"]);
         $password = sanitize_input($_POST["password"]);
+                
+        $check = "SHOW TABLES LIKE '$tb'";
+        $result = mysqli_query($conn, $check);
+        if($result and mysqli_num_rows($result) == 1){
+            $sql = "ALTER TABLE $tb ADD `$enrollment_no` BOOLEAN DEFAULT FALSE";
+            if(mysqli_query($conn, $sql)){
+                echo "<h3> uploaded successfully!</h3>";
+            }
+        }
 
         $sql = "INSERT INTO student (name, enrollment_number, school, class, gender, email, password, phone_no) VALUES ('$name', '$enrollment_no', '$detail[2]', '$class', '$gender', '$email', '$password', '$phone_no')";
 
         if(mysqli_query($conn, $sql)){
-            echo "<h3>  Image uploaded successfully!</h3>";
+            echo "<h3> uploaded successfully!</h3>";
             echo "<script type = \"text/javascript\">
                     window.location = (\"teacher.php\")
                     </script>";
