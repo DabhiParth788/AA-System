@@ -68,7 +68,8 @@
                 <!-- Dark Logo-->
                 <a href="index.html" class="logo logo-dark">
                     <span class="logo-sm ">
-                        <img src="assets/logos/AAA-White23.png" alt="" height="150px">
+                    <img src="assets/images/logo-sm.png" alt="" height="22px">
+
                     </span>
                     <span class="logo-lg ">
                         <img src="assets/logos/AAA-White23.png" alt="" height="150px">
@@ -77,7 +78,8 @@
                 <!-- Light Logo-->
                 <a href="index.html" class="logo logo-light">
                     <span class="logo-sm ">
-                        <img src="assets/logos/AAA-White23.png" alt="" height="150px">
+                    <img src="assets/images/logo-sm.png" alt="" height="22px">
+
                     </span>
                     <span class="logo-lg ">
                         <img src="assets/logos/AAA-White23.png" alt="" height="150px">
