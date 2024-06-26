@@ -175,14 +175,14 @@ if ($row = mysqli_fetch_assoc($result)) {
                         <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="">Contact Us</span></li>
 
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="#sidebarContactUs" role="button" aria-expanded="false" aria-controls="sidebarContactUs">
+                            <a class="nav-link menu-link" href="?page=contactUs" role="button" aria-expanded="false" aria-controls="sidebarContactUs">
                                 <i class="ri-pencil-ruler-2-line"></i> <span data-key="t-base-ui">Contact Us</span>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="#sidebarFeedback" role="button" aria-expanded="false" aria-controls="sidebarFeedback">
-                                <i class="ri-stack-line"></i> <span data-key="t-advance-ui">Feed Back</span>
+                            <a class="nav-link menu-link" href="?page=aboutUs" role="button" aria-expanded="false" aria-controls="sidebarAboutUs">
+                                <i class="ri-stack-line"></i> <span data-key="t-advance-ui">About Us</span>
                             </a>
                         </li>
 
@@ -217,6 +217,10 @@ if ($row = mysqli_fetch_assoc($result)) {
                                             echo "Activity";
                                         } elseif ($page == 'attendance') {
                                             echo "Attendance";
+                                        } elseif ($page == 'aboutUs') {
+                                            echo "About Us";
+                                        }elseif ($page == 'contactUs') {
+                                            echo "Contact Us";
                                         } else {
                                             echo "Dashboard";
                                         }
@@ -237,6 +241,10 @@ if ($row = mysqli_fetch_assoc($result)) {
                                                         echo "Personal";
                                                     } elseif ($page == 'attendance') {
                                                         echo "TimeTable";
+                                                    } elseif ($page == 'aboutUs') {
+                                                        echo "About Us";
+                                                    }elseif ($page == 'contactUs') {
+                                                        echo "Contact Us";
                                                     } else {
                                                         echo "Dashboard";
                                                     }
@@ -254,7 +262,11 @@ if ($row = mysqli_fetch_assoc($result)) {
                                                     echo "Activity";
                                                 } elseif ($page == 'attendance') {
                                                     echo "Attendance";
-                                                } else {
+                                                }elseif ($page == 'aboutUs') {
+                                                    echo "Abou Us";
+                                                }elseif ($page == 'contactUs') {
+                                                    echo "Contact Us";
+                                                }else {
                                                     echo "Profile";
                                                 }
                                             } else {
@@ -282,6 +294,10 @@ if ($row = mysqli_fetch_assoc($result)) {
                         include './student/activity.php';
                     } elseif ($page == 'attendance') {
                         include './student/attendance.php';
+                    }elseif ($page == 'aboutUs') {
+                        include './include/aboutUs.php';
+                    }elseif ($page == 'contactUs') {
+                        include './include/contactUs.php';
                     } else {
                         include './student/profile.php';
                     }

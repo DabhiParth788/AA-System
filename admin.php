@@ -159,16 +159,14 @@
                         <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="">Contact Us</span></li>
 
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="#sidebarContactUs" role="button" aria-expanded="false"
-                                aria-controls="sidebarContactUs">
+                            <a class="nav-link menu-link" href="?page=contactUs" role="button" aria-expanded="false" aria-controls="sidebarContactUs">
                                 <i class="ri-pencil-ruler-2-line"></i> <span data-key="t-base-ui">Contact Us</span>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="#sidebarFeedback" role="button" aria-expanded="false"
-                                aria-controls="sidebarFeedback">
-                                <i class="ri-stack-line"></i> <span data-key="t-advance-ui">Feed Back</span>
+                            <a class="nav-link menu-link" href="?page=aboutUs" role="button" aria-expanded="false" aria-controls="sidebarAboutUs">
+                                <i class="ri-stack-line"></i> <span data-key="t-advance-ui">About Us</span>
                             </a>
                         </li>
 
@@ -212,6 +210,10 @@
          
             elseif($page == 'classDetails'){
                 echo "Class";
+            }elseif ($page == 'aboutUs') {
+                echo "Abou Us";
+            }elseif ($page == 'contactUs') {
+                echo "Contact Us";
             }
             else {
                  echo "Dashboard";
@@ -241,6 +243,10 @@
             }
             elseif($page == 'classDetails'){
                 echo "Class";
+            }elseif ($page == 'aboutUs') {
+                echo "Abou Us";
+            }elseif ($page == 'contactUs') {
+                echo "Contact Us";
             }
             else {
                  echo "Dashboard";
@@ -266,6 +272,10 @@
             }
             elseif($page == 'classDetails'){
                 echo "Class Details";
+            }elseif ($page == 'aboutUs') {
+                echo "Abou Us";
+            }elseif ($page == 'contactUs') {
+                echo "Contact Us";
             }
             else {
                  echo "Profile";
@@ -302,6 +312,10 @@
             }
             elseif($page == 'classDetails'){
                 include './admin/classDetails.php';
+            }elseif ($page == 'aboutUs') {
+                include './include/aboutUs.php';
+            }elseif ($page == 'contactUs') {
+                include './include/contactUs.php';
             }
              else {
                 include './admin/profile.php';
